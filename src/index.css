@@ -1,0 +1,170 @@
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.block-btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 0;
+}
+
+.btn-add-new-list {
+    background-color: chartreuse;
+}
+
+.to-do-list__header {
+    position: relative;
+}
+
+.btn-remove-list {
+    position: absolute;
+    top: 11px;
+    right: 25%;
+    background-color: crimson;
+}
+
+.to-do-list {
+    margin: 50px 0;
+}
+
+.title {
+    margin: 0 0 50px;
+    text-align: center;
+}
+
+.form {
+    display: block;
+    margin: 50px 0;
+    width: 100%;
+}
+
+.input {
+    width: 90%;
+}
+
+.list {
+    list-style-position: inside;
+}
+
+.item {
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.run {
+    display: block;
+    position: absolute;
+    background-color: brown;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 40px;
+    cursor: pointer;
+}
+
+.run::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 2px;
+    left: 7px;
+    height: 13px;
+    width: 3px;
+    border-radius: 42%;
+    background-color: burlywood;
+    transform: rotate(45deg);
+}
+
+.run::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 2px;
+    left: 7px;
+    height: 13px;
+    width: 3px;
+    border-radius: 42%;
+    background-color: burlywood;
+    transform: rotate(-45deg);
+}
+
+.stop {
+    display: block;
+    position: absolute;
+    background-color: rgb(0, 240, 0);
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 40px;
+    cursor: pointer;
+}
+
+.stop::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 5px;
+    left: 10px;
+    height: 8px;
+    width: 3px;
+    border-radius: 20%;
+    background-color: burlywood;
+    transform: rotate(45deg);
+}
+
+.stop::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 1px;
+    left: 5px;
+    height: 13px;
+    width: 3px;
+    border-radius: 20%;
+    background-color: burlywood;
+    transform: rotate(-45deg);
+}
+
+.del {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0px;
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.count-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.timer__time {
+    display: flex;
+}
+
+.timer__time div {
+    margin-right: 5px;
+}
