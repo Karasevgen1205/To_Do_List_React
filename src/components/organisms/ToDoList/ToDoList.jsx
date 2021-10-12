@@ -2,45 +2,44 @@ import React, { useState } from "react";
 import { BlockTitleBtn, Form, BlockCount, List } from "../../molecules";
 
 const ToDoList = (props) => {
-  // const [count, setCount] = useState(0);
-  // const [f, setF] = useState(55);
+  const [todos, setTodos] = useState([
+    { id: 1, completed: false, title: "Learn JS" },
+    { id: 2, completed: false, title: "Learn React" },
+    { id: 3, completed: false, title: "Learn Redux" },
+  ]);
 
-  // function increment() {
-  //     setCount(count + 10);
-  //     setF(f + 1)
-  // }
+  function toggle(id) {
+    setTodos(
+      todos.map((item, i) => {
+        if (item.id === id) {
+          item.completed = !item.completed;
+        }
+        return item;
+      })
+    );
+  }
 
-  // function decrement() {
-  //     setCount(count - 10);
-  //     setF(f - 1)
-  // }
+  function removeItem(id) {
+    setTodos(
+      todos.filter(item => item.id !== id)
+      )
+  }
 
-  // const [todos, setTodos] = useState([
-  //     {id: 1, title: 'Hello', completed: true},
-  //     {id: 2, title: 'Fucking', completed: true},
-  // ])
-
-  // const [todos, setTodos] = useState('');
-
-  // const addTodo = event => {
-  //     if(event.key === "Enter") {
-
-  //     }
-  // }
+  function onCreate(value) {
+    setTodos(todos.concat([
+      { id: Date.now(), completed: false, title: value }
+    ]));
+  }
 
   return (
     <div className="container">
       <div className="container__wrapper">
         <BlockTitleBtn />
-        <Form onCreate={props.onCreate}/>
-        { props.todos.length 
-        ? <List todos={props.todos} toggle={props.toggle} removeItem={props.removeItem}/>
+        <Form onCreate={onCreate}/>
+        { todos.length 
+        ? <List todos={todos} toggle={toggle} removeItem={removeItem}/>
         : <h2>Nothing to do</h2>}
         <BlockCount />
-        {/* <p>{count}</p> */}
-        {/* <p>{f}</p> */}
-        {/* <button onClick={increment}>Click</button> */}
-        {/* <button onClick={decrement}>Click</button> */}
       </div>
     </div>
   );

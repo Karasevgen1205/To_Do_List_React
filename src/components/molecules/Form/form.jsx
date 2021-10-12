@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-// import { Input, BtnPublish } from "../../atoms";
+import { Input, BtnPublish } from "../../atoms";
 
 const Form = ({onCreate}) => {
 
@@ -14,19 +14,14 @@ const Form = ({onCreate}) => {
     }
   }
 
+  function onCh(event) {
+    setValue(event)
+  }
+
   return (
     <form className="form" onSubmit={submitHandler}>
-      <input 
-      className="input" 
-      value={value} 
-      type="text" 
-      placeholder="Enter to do item" 
-      onChange={event => setValue(event.target.value)}></input>
-      <button className="button publish" type="submit">
-        Publish
-      </button>
-      {/* <Input /> */}
-      {/* <BtnPublish /> */}
+      <Input value={value} onCh={onCh}/>
+      <BtnPublish />
     </form>
   );
 };

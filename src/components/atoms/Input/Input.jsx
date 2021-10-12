@@ -1,8 +1,15 @@
 import React from "react";
 
-const Input = () => {
+const Input = (props) => {
     return (
-        <input className="input" type="text" placeholder="Enter to do item"></input>
+        <input 
+        className="input" 
+        value={props.value} 
+        type="text" 
+        placeholder="Enter to do item" 
+        onChange={event => {
+        props.onCh(event.target.value)
+        }} />
     )
 }
 
