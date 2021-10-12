@@ -19,7 +19,9 @@ const ListItem = (props) => {
           props.toggle(props.todo.id);
         }}
       ></button>
-      <i className="item-btn del bi-trash-fill"></i>
+      <i className="item-btn del bi-trash-fill" onClick={() => {
+        props.removeItem(props.todo.id)
+      }}></i>
     </li>
   );
 };

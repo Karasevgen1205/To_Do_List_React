@@ -12,6 +12,7 @@ const List = (props) => {
             index={i + 1}
             key={todo.id}
             toggle={props.toggle}
+            removeItem={props.removeItem}
           />
         );
       })}

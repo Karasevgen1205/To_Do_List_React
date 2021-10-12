@@ -32,8 +32,10 @@ const ToDoList = (props) => {
     <div className="container">
       <div className="container__wrapper">
         <BlockTitleBtn />
-        <Form />
-        <List todos={props.todos} toggle={props.toggle} />
+        <Form onCreate={props.onCreate}/>
+        { props.todos.length 
+        ? <List todos={props.todos} toggle={props.toggle} removeItem={props.removeItem}/>
+        : <h2>Nothing to do</h2>}
         <BlockCount />
         {/* <p>{count}</p> */}
         {/* <p>{f}</p> */}

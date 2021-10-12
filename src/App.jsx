@@ -20,11 +20,23 @@ const App = () => {
     );
   }
 
+  function removeItem(id) {
+    setTodos(
+      todos.filter(item => item.id !== id)
+      )
+  }
+
+  function onCreate(value) {
+    setTodos(todos.concat([
+      { id: Date.now(), completed: false, title: value }
+    ]));
+  }
+
   return (
     <div className="container">
       <div className="container__wrapper">
         <BtnBlock />
-        <ToDoList todos={todos} toggle={toggle} />
+        <ToDoList todos={todos} toggle={toggle} removeItem={removeItem} onCreate={onCreate}/> 
       </div>
     </div>
   );
