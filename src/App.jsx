@@ -1,12 +1,5 @@
 import { React, useState } from "react";
-import { BtnRemoveList, Link, ListTitle, ListItem } from "./components/atoms";
-import {
-  BtnBlock,
-  List,
-  BlockTitleBtn,
-  Form,
-  BlockCount,
-} from "./components/molecules";
+import { BtnBlock } from "./components/molecules";
 import { ToDoList } from "./components/organisms";
 
 const App = () => {
@@ -25,7 +18,6 @@ const App = () => {
         return item;
       })
     );
-    // console.log(todos);
   }
 
   return (
