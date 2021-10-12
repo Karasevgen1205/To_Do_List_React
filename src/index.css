@@ -58,13 +58,18 @@ p {
 }
 
 .list {
-    list-style-position: inside;
+    list-style: none;
+    /* list-style-position: inside; */
 }
 
 .item {
     position: relative;
     width: 100%;
     margin: 15px 0;
+}
+
+.item strong {
+    padding-right: 10px;
 }
 
 .run {
@@ -104,7 +109,7 @@ p {
     transform: rotate(-45deg);
 }
 
-.stop {
+.done {
     display: block;
     position: absolute;
     background-color: rgb(0, 240, 0);
@@ -115,7 +120,7 @@ p {
     cursor: pointer;
 }
 
-.stop::before {
+.done::before {
     content: "";
     position: absolute;
     display: block;
@@ -128,7 +133,7 @@ p {
     transform: rotate(45deg);
 }
 
-.stop::after {
+.done::after {
     content: "";
     position: absolute;
     display: block;
