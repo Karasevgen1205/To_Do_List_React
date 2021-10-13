@@ -1,1 +1,1 @@
-export {default} from './BtnNewList'
+export { default } from "./BtnNewList";

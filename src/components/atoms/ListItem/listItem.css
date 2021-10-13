@@ -1,0 +1,97 @@
+.item {
+  position: relative;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.item strong {
+  padding-right: 10px;
+}
+
+.del {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0px;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.run {
+  display: block;
+  position: absolute;
+  background-color: brown;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 40px;
+  cursor: pointer;
+}
+
+.run::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 2px;
+  left: 7px;
+  height: 13px;
+  width: 3px;
+  border-radius: 42%;
+  background-color: burlywood;
+  transform: rotate(45deg);
+}
+
+.run::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 2px;
+  left: 7px;
+  height: 13px;
+  width: 3px;
+  border-radius: 42%;
+  background-color: burlywood;
+  transform: rotate(-45deg);
+}
+
+.done {
+  display: block;
+  position: absolute;
+  background-color: rgb(0, 240, 0);
+  width: 20px;
+  height: 20px;
+  top: 0;
+  right: 40px;
+  cursor: pointer;
+}
+
+.done::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 5px;
+  left: 10px;
+  height: 8px;
+  width: 3px;
+  border-radius: 20%;
+  background-color: burlywood;
+  transform: rotate(45deg);
+}
+
+.done::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 1px;
+  left: 5px;
+  height: 13px;
+  width: 3px;
+  border-radius: 20%;
+  background-color: burlywood;
+  transform: rotate(-45deg);
+}
+
+.line-through {
+  text-decoration: line-through;
+}

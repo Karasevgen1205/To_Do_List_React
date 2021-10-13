@@ -1,6 +1,7 @@
-import { React, useState } from "react";
-import { BtnBlock } from "./components/molecules";
-import { ToDoList } from "./components/organisms";
+import React, { useState } from "react";
+import { BtnBlock } from "../components/molecules";
+import { ToDoList } from "../components/organisms";
+import "./App.css";
 
 const App = () => {
   const [countList, setCountList] = useState([Date.now()]);

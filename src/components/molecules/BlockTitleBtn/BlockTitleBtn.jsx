@@ -1,5 +1,6 @@
 import React from "react";
 import { ListTitle, BtnRemoveList } from "../../atoms";
+import "./BlockTitleBtn.css";
 
 const BlockTitleBtn = (props) => {
   return (

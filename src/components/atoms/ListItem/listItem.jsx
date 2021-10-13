@@ -1,4 +1,5 @@
 import React from "react";
+import "./listItem.css";
 
 const ListItem = (props) => {
   let classBtn = "item-btn run ";
@@ -19,9 +20,12 @@ const ListItem = (props) => {
           props.toggle(props.todo.id);
         }}
       ></button>
-      <i className="item-btn del bi-trash-fill" onClick={() => {
-        props.removeItem(props.todo.id)
-      }}></i>
+      <i
+        className="item-btn del bi-trash-fill"
+        onClick={() => {
+          props.removeItem(props.todo.id);
+        }}
+      ></i>
     </li>
   );
 };

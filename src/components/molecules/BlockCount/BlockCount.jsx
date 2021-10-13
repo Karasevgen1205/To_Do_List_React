@@ -1,5 +1,6 @@
 import React from "react";
 import { CountAll, CountActive, CountCompleted } from "../../atoms";
+import "./BlockCount.css";
 
 const BlockCount = (props) => {
   return (

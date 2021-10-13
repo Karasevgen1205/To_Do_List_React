@@ -1,1 +1,1 @@
-export {default} from "./BtnBlock";
+export { default } from "./BtnBlock";

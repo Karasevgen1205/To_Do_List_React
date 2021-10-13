@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BlockTitleBtn, Form, BlockCount, List } from "../../molecules";
+import "./ToDoList.css";
 
 const ToDoList = (props) => {
   const [todos, setTodos] = useState([
@@ -51,7 +52,7 @@ const ToDoList = (props) => {
 
   return (
     <div className="container">
-      <div className="container__wrapper">
+      <div className="to-do-list">
         <BlockTitleBtn id={props.id} removeList={props.removeList} />
         <Form onCreate={onCreate} />
         {todos.length ? (

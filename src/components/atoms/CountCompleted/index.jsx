@@ -1,1 +1,1 @@
-export {default} from "./CountCompleted";
+export { default } from "./CountCompleted";

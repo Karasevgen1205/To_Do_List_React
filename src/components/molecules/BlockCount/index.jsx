@@ -1,1 +1,1 @@
-export {default} from "./BlockCount";
+export { default } from "./BlockCount";

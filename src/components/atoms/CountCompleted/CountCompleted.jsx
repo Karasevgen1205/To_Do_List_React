@@ -1,4 +1,5 @@
 import React from "react";
+import "./CountCompleted.css";
 
 const CountCompleted = (props) => {
   return (

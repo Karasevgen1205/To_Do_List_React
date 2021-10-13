@@ -1,26 +1,26 @@
-import {React, useState} from "react";
+import React, { useState } from "react";
 import { Input, BtnPublish } from "../../atoms";
+import "./form.css";
 
-const Form = ({onCreate}) => {
-
-  const [value, setValue] = useState('');
+const Form = ({ onCreate }) => {
+  const [value, setValue] = useState("");
 
   function submitHandler(event) {
     event.preventDefault();
 
-    if(value.trim()) {
+    if (value.trim()) {
       onCreate(value);
-      setValue('');
+      setValue("");
     }
   }
 
   function onCh(event) {
-    setValue(event)
+    setValue(event);
   }
 
   return (
     <form className="form" onSubmit={submitHandler}>
-      <Input value={value} onCh={onCh}/>
+      <Input value={value} onCh={onCh} />
       <BtnPublish />
     </form>
   );

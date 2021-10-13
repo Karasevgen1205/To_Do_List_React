@@ -1,4 +1,5 @@
 import React from "react";
+import "./CountAll.css";
 
 const CountAll = (props) => {
   return (

@@ -1,1 +1,1 @@
-export {default} from "./BtnPublish";
+export { default } from "./BtnPublish";

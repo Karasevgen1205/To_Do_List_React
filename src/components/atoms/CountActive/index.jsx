@@ -1,1 +1,1 @@
-export {default} from "./CountActive"
+export { default } from "./CountActive";

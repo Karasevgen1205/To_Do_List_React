@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Link = () => {
-    return <a href="#">This is link</a>
-}
+  return <a href="#">This is link</a>;
+};
 
 export default Link;
