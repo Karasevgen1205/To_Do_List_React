@@ -1,10 +1,10 @@
 import React from "react";
 import "./CountActive.css";
 
-const CountActive = (props) => {
+const CountActive = ({ active }) => {
   return (
     <p>
-      Active tasks: <span className="count-active">{props.active}</span>
+      Active tasks: <span className="count-active">{active}</span>
     </p>
   );
 };

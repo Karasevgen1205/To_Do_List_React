@@ -2,12 +2,12 @@ import React from "react";
 import { CountAll, CountActive, CountCompleted } from "../../atoms";
 import "./BlockCount.css";
 
-const BlockCount = (props) => {
+const BlockCount = ({ count, active, completed }) => {
   return (
     <div className="count-block">
-      <CountAll count={props.count} />
-      <CountActive active={props.active} />
-      <CountCompleted completed={props.completed} />
+      <CountAll count={count} />
+      <CountActive active={active} />
+      <CountCompleted completed={completed} />
     </div>
   );
 };

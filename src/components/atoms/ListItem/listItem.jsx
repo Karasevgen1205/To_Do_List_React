@@ -1,29 +1,29 @@
 import React from "react";
 import "./listItem.css";
 
-const ListItem = (props) => {
+const ListItem = ({ todo, title, index, toggle, removeItem }) => {
   let classBtn = "item-btn run ";
   let classTitle = "";
-  if (props.todo.completed) {
+  if (todo.completed) {
     classBtn += "done";
     classTitle += "line-through";
   }
 
   return (
     <li className="item">
-      <strong>{props.index}</strong>
-      <span className={classTitle}>{props.title}</span>
+      <strong>{index}</strong>
+      <span className={classTitle}>{title}</span>
       <button
         className={classBtn}
         type="button"
         onClick={() => {
-          props.toggle(props.todo.id);
+          toggle(todo.id);
         }}
       ></button>
       <i
         className="item-btn del bi-trash-fill"
         onClick={() => {
-          props.removeItem(props.todo.id);
+          removeItem(todo.id);
         }}
       ></i>
     </li>

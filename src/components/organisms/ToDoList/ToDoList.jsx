@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BlockTitleBtn, Form, BlockCount, List } from "../../molecules";
 import "./ToDoList.css";
 
-const ToDoList = (props) => {
+const ToDoList = ({ id, removeList }) => {
   const [todos, setTodos] = useState([
     { id: 1, completed: false, title: "Learn JS" },
     { id: 2, completed: false, title: "Learn React" },
@@ -12,7 +12,7 @@ const ToDoList = (props) => {
   let [activeToDoCount, setActiveToDoCount] = useState(todos.length);
   let [completedToDoCount, setCompletedToDoCount] = useState(0);
 
-  function toggle(id) {
+  const toggle = (id) => {
     todos.map((item) => {
       if (item.id === id && item.completed === false) {
         setActiveToDoCount(activeToDoCount - 1);
@@ -30,9 +30,9 @@ const ToDoList = (props) => {
         return item;
       })
     );
-  }
+  };
 
-  function removeItem(id) {
+  const removeItem = (id) => {
     todos.map((item) => {
       if (item.id === id && item.completed === false) {
         setActiveToDoCount(activeToDoCount - 1);
@@ -41,19 +41,19 @@ const ToDoList = (props) => {
       }
     });
     setTodos(todos.filter((item) => item.id !== id));
-  }
+  };
 
-  function onCreate(value) {
+  const onCreate = (value) => {
     setTodos(
       todos.concat([{ id: Date.now(), completed: false, title: value }])
     );
     setActiveToDoCount(activeToDoCount + 1);
-  }
+  };
 
   return (
     <div className="container">
       <div className="to-do-list">
-        <BlockTitleBtn id={props.id} removeList={props.removeList} />
+        <BlockTitleBtn id={id} removeList={removeList} />
         <Form onCreate={onCreate} />
         {todos.length ? (
           <List todos={todos} toggle={toggle} removeItem={removeItem} />

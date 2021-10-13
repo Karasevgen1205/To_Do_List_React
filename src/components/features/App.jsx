@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { BtnBlock } from "../components/molecules";
-import { ToDoList } from "../components/organisms";
+import { BtnBlock } from "../molecules";
+import { ToDoList } from "../organisms";
 import "./App.css";
 
 const App = () => {
   const [countList, setCountList] = useState([Date.now()]);
 
-  function addNewList() {
+  const addNewList = () => {
     setCountList(countList.concat([Date.now()]));
-  }
+  };
 
-  function removeList(id) {
+  const removeList = (id) => {
     setCountList(countList.filter((item) => item !== id));
-  }
+  };
 
   return (
     <div className="container">

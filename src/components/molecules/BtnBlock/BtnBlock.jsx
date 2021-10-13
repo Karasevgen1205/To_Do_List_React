@@ -1,11 +1,16 @@
 import React from "react";
-import { BtnNewList } from "../../atoms";
+import { Button } from "../../atoms";
 import "./BtnBlock.css";
 
-const BtnBlock = (props) => {
+const BtnBlock = ({ addNewList }) => {
   return (
     <div className="block-btn">
-      <BtnNewList addNewList={props.addNewList} />
+      <Button
+        className={"btn-add-new-list"}
+        type={"button"}
+        onClick={addNewList}
+        title={"Add new List"}
+      />
     </div>
   );
 };

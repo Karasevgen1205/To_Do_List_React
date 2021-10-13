@@ -1,0 +1,15 @@
+.btn-add-new-list {
+  background-color: chartreuse;
+}
+
+.publish {
+  width: 10%;
+  background: antiquewhite;
+}
+
+.btn-remove-list {
+  position: absolute;
+  top: 11px;
+  right: 25%;
+  background-color: crimson;
+}
