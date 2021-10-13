@@ -2,7 +2,7 @@ import React from "react";
 import { ListTitle, Button } from "../../atoms";
 import "./BlockTitleBtn.css";
 
-const BlockTitleBtn = ({ id, removeList }) => {
+const BlockTitleBtn = ({ id, onRemoveList }) => {
   return (
     <div className="to-do-list__header">
       <ListTitle />
@@ -10,7 +10,7 @@ const BlockTitleBtn = ({ id, removeList }) => {
         className={"btn-remove-list"}
         type={"button"}
         onClick={() => {
-          removeList(id);
+          onRemoveList(id);
         }}
         title={"Remove This List"}
       />

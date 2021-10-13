@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BlockTitleBtn, Form, BlockCount, List } from "../../molecules";
 import "./ToDoList.css";
 
-const ToDoList = ({ id, removeList }) => {
+const ToDoList = ({ id, onRemoveList }) => {
   const [todos, setTodos] = useState([
     { id: 1, completed: false, title: "Learn JS" },
     { id: 2, completed: false, title: "Learn React" },
@@ -12,7 +12,7 @@ const ToDoList = ({ id, removeList }) => {
   let [activeToDoCount, setActiveToDoCount] = useState(todos.length);
   let [completedToDoCount, setCompletedToDoCount] = useState(0);
 
-  const toggle = (id) => {
+  const handleToggle = (id) => {
     todos.map((item) => {
       if (item.id === id && item.completed === false) {
         setActiveToDoCount(activeToDoCount - 1);
@@ -32,7 +32,7 @@ const ToDoList = ({ id, removeList }) => {
     );
   };
 
-  const removeItem = (id) => {
+  const handleRemoveItem = (id) => {
     todos.map((item) => {
       if (item.id === id && item.completed === false) {
         setActiveToDoCount(activeToDoCount - 1);
@@ -43,7 +43,7 @@ const ToDoList = ({ id, removeList }) => {
     setTodos(todos.filter((item) => item.id !== id));
   };
 
-  const onCreate = (value) => {
+  const handleCreate = (value) => {
     setTodos(
       todos.concat([{ id: Date.now(), completed: false, title: value }])
     );
@@ -53,10 +53,14 @@ const ToDoList = ({ id, removeList }) => {
   return (
     <div className="container">
       <div className="to-do-list">
-        <BlockTitleBtn id={id} removeList={removeList} />
-        <Form onCreate={onCreate} />
+        <BlockTitleBtn id={id} onRemoveList={onRemoveList} />
+        <Form onCreate={handleCreate} />
         {todos.length ? (
-          <List todos={todos} toggle={toggle} removeItem={removeItem} />
+          <List
+            todos={todos}
+            onToggle={handleToggle}
+            onRemoveItem={handleRemoveItem}
+          />
         ) : (
           <h2>Nothing to do</h2>
         )}

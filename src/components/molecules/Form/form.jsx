@@ -5,7 +5,7 @@ import "./form.css";
 const Form = ({ onCreate }) => {
   const [value, setValue] = useState("");
 
-  const submitHandler = (event) => {
+  const handlerSubmit = (event) => {
     event.preventDefault();
 
     if (value.trim()) {
@@ -14,13 +14,13 @@ const Form = ({ onCreate }) => {
     }
   };
 
-  const onCh = (event) => {
+  const handlerChenge = (event) => {
     setValue(event);
   };
 
   return (
-    <form className="form" onSubmit={submitHandler}>
-      <Input value={value} onCh={onCh} />
+    <form className="form" onSubmit={handlerSubmit}>
+      <Input value={value} onChenge={handlerChenge} />
       <Button title={"Publish"} className={"button publish"} type={"submit"} />
     </form>
   );

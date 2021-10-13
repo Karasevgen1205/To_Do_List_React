@@ -1,7 +1,7 @@
 import React from "react";
 import "./Input.css";
 
-const Input = ({ value, onCh }) => {
+const Input = ({ value, onChenge }) => {
   return (
     <input
       className="input"
@@ -9,7 +9,7 @@ const Input = ({ value, onCh }) => {
       type="text"
       placeholder="Enter to do item"
       onChange={(event) => {
-        onCh(event.target.value);
+        onChenge(event.target.value);
       }}
     />
   );

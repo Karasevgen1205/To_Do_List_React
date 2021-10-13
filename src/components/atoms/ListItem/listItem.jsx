@@ -1,7 +1,7 @@
 import React from "react";
 import "./listItem.css";
 
-const ListItem = ({ todo, title, index, toggle, removeItem }) => {
+const ListItem = ({ todo, title, index, onToggle, onRemoveItem }) => {
   let classBtn = "item-btn run ";
   let classTitle = "";
   if (todo.completed) {
@@ -17,13 +17,13 @@ const ListItem = ({ todo, title, index, toggle, removeItem }) => {
         className={classBtn}
         type="button"
         onClick={() => {
-          toggle(todo.id);
+          onToggle(todo.id);
         }}
       ></button>
       <i
         className="item-btn del bi-trash-fill"
         onClick={() => {
-          removeItem(todo.id);
+          onRemoveItem(todo.id);
         }}
       ></i>
     </li>

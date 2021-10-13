@@ -6,20 +6,22 @@ import "./App.css";
 const App = () => {
   const [countList, setCountList] = useState([Date.now()]);
 
-  const addNewList = () => {
+  const handleAddNewList = () => {
     setCountList(countList.concat([Date.now()]));
   };
 
-  const removeList = (id) => {
+  const handleRemoveList = (id) => {
     setCountList(countList.filter((item) => item !== id));
   };
 
   return (
     <div className="container">
       <div className="container__wrapper">
-        <BtnBlock addNewList={addNewList} />
+        <BtnBlock onAddNewList={handleAddNewList} />
         {countList.map((item) => {
-          return <ToDoList id={item} key={item} removeList={removeList} />;
+          return (
+            <ToDoList id={item} key={item} onRemoveList={handleRemoveList} />
+          );
         })}
       </div>
     </div>
