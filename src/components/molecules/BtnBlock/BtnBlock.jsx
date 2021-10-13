@@ -1,10 +1,10 @@
 import React from "react";
 import { BtnNewList } from "../../atoms";
 
-const BtnBlock = () => {
+const BtnBlock = (props) => {
   return (
     <div className="block-btn">
-      <BtnNewList />
+      <BtnNewList addNewList={props.addNewList}/>
     </div>
   );
 };

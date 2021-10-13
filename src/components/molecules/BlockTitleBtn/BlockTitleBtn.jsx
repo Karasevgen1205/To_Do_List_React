@@ -1,11 +1,11 @@
 import React from "react";
 import { ListTitle, BtnRemoveList } from "../../atoms";
 
-const BlockTitleBtn = () => {
+const BlockTitleBtn = (props) => {
   return (
     <div className="to-do-list__header">
       <ListTitle />
-      <BtnRemoveList />
+      <BtnRemoveList id={props.id} removeList={props.removeList} />
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import React from "react";
 
-const BtnNewList = () => {
+const BtnNewList = (props) => {
   return (
-    <button className="btn-add-new-list" type="button">
+    <button className="btn-add-new-list" type="button" onClick={props.addNewList}>
       Add new List
     </button>
   );
